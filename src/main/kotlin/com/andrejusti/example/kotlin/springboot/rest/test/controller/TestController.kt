@@ -1,5 +1,9 @@
 package com.andrejusti.example.kotlin.springboot.rest.test.controller
 
+import com.andrejusti.example.kotlin.springboot.rest.codingTest.CodingTestSolution
+import com.andrejusti.example.kotlin.springboot.rest.codingTest.ProblemInput
+import com.andrejusti.example.kotlin.springboot.rest.codingTest.impl.Targets
+import com.andrejusti.example.kotlin.springboot.rest.codingTest.요격시스템
 import com.andrejusti.example.kotlin.springboot.rest.global.exception.ValidationException
 import com.andrejusti.example.kotlin.springboot.rest.test.service.TestService
 import com.andrejusti.example.kotlin.springboot.rest.test.service.TestService2
@@ -24,10 +28,9 @@ class TestController(
 
     companion object {
         const val DOMAIN_URI: String = "/test"
-        const val URI_1: String = "1"
-        const val URI_2: String = "2"
-        const val URL1: String = "$DOMAIN_URI/$URI_1"
-        const val URL2: String = "$DOMAIN_URI/$URI_2"
+        const val URL1: String = "$DOMAIN_URI/1"
+        const val URL2: String = "$DOMAIN_URI/2"
+        const val URL3: String = "$DOMAIN_URI/3"
     }
 
     @GetMapping(URL1)
@@ -42,5 +45,26 @@ class TestController(
     fun test2(): String{
         logger.info("test2 called")
         return testService2.test()
+    }
+
+    @GetMapping
+    fun test3(): Int{
+        val targets = arrayOf(
+                intArrayOf(2, 3),
+                intArrayOf(4, 5),
+                intArrayOf(6, 7),
+                intArrayOf(8, 9),
+                intArrayOf(10, 11),
+                intArrayOf(12, 13),
+                intArrayOf(14, 15),
+                intArrayOf(16, 17)
+        )
+
+        val input: ProblemInput = Targets(targets)
+        val solution: CodingTestSolution = 요격시스템()
+        val result = solution.solution(input)
+        println("Maximum number of non-overlapping targets: $result")
+
+        return result
     }
 }
