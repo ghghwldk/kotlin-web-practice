@@ -1,5 +1,6 @@
 package com.andrejusti.example.kotlin.springboot.rest.test.controller
 
+import com.andrejusti.example.kotlin.springboot.rest.global.exception.ValidationException
 import com.andrejusti.example.kotlin.springboot.rest.test.service.TestService
 import com.andrejusti.example.kotlin.springboot.rest.test.service.TestService2
 import com.andrejusti.example.kotlin.springboot.rest.test.service.impl.TestServiceImpl
