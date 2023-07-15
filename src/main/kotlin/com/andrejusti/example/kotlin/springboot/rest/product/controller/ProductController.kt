@@ -1,15 +1,15 @@
-package com.andrejusti.example.kotlin.springboot.rest.controller.endpointmessage
+package com.andrejusti.example.kotlin.springboot.rest.product.controller
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import com.andrejusti.example.kotlin.springboot.rest.entity.Product
-import com.andrejusti.example.kotlin.springboot.rest.service.ProductService
+import com.andrejusti.example.kotlin.springboot.rest.product.domain.entity.Product
+import com.andrejusti.example.kotlin.springboot.rest.product.service.ProductService
 import java.net.URI
 import javax.servlet.http.HttpServletRequest
 
 @RestController
-class ProductEndpoint(
+class ProductController(
         @Autowired private val productService: ProductService
 ) {
 

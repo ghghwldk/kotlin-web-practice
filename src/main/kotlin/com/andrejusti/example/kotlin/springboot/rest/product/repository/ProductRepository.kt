@@ -1,8 +1,8 @@
-package com.andrejusti.example.kotlin.springboot.rest.repository.api
+package com.andrejusti.example.kotlin.springboot.rest.product.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
-import com.andrejusti.example.kotlin.springboot.rest.entity.Product
+import com.andrejusti.example.kotlin.springboot.rest.product.domain.entity.Product
 
 @Repository
 interface ProductRepository : JpaRepository<Product, Long> {

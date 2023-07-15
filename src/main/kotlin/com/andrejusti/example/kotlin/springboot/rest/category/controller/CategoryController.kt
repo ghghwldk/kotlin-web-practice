@@ -3,13 +3,13 @@ package com.andrejusti.example.kotlin.springboot.rest.controller.endpointmessage
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import com.andrejusti.example.kotlin.springboot.rest.entity.Category
-import com.andrejusti.example.kotlin.springboot.rest.service.CategoryService
+import com.andrejusti.example.kotlin.springboot.rest.category.domain.entity.Category
+import com.andrejusti.example.kotlin.springboot.rest.category.service.CategoryService
 import java.net.URI
 import javax.servlet.http.HttpServletRequest
 
 @RestController
-class CategoryEndpoint(
+class CategoryController(
         @Autowired private val categoryService: CategoryService
 ) {
 

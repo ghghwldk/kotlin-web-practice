@@ -1,4 +1,4 @@
-package com.andrejusti.example.kotlin.springboot.rest.service
+package com.andrejusti.example.kotlin.springboot.rest.global.service
 
 import org.apache.commons.lang3.math.NumberUtils
 import org.springframework.beans.factory.annotation.Value
@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
-import com.andrejusti.example.kotlin.springboot.rest.dto.ResultPage
+import com.andrejusti.example.kotlin.springboot.rest.global.dto.ResultPage
 
 @Service
 class PaginationService(

@@ -1,4 +1,4 @@
-package com.andrejusti.example.kotlin.springboot.rest.service
+package com.andrejusti.example.kotlin.springboot.rest.product.service
 
 import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang3.math.NumberUtils
@@ -9,9 +9,11 @@ import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.util.CollectionUtils
-import com.andrejusti.example.kotlin.springboot.rest.dto.ResultPage
-import com.andrejusti.example.kotlin.springboot.rest.entity.Product
-import com.andrejusti.example.kotlin.springboot.rest.repository.api.ProductRepository
+import com.andrejusti.example.kotlin.springboot.rest.global.dto.ResultPage
+import com.andrejusti.example.kotlin.springboot.rest.product.domain.entity.Product
+import com.andrejusti.example.kotlin.springboot.rest.global.service.PaginationService
+import com.andrejusti.example.kotlin.springboot.rest.global.service.ValidateService
+import com.andrejusti.example.kotlin.springboot.rest.product.repository.ProductRepository
 
 @Service
 class ProductService(

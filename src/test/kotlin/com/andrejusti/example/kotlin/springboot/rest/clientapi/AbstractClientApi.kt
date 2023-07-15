@@ -10,9 +10,9 @@ import org.springframework.http.client.ClientHttpResponse
 import org.springframework.stereotype.Component
 import org.springframework.util.LinkedMultiValueMap
 import org.springframework.web.client.DefaultResponseErrorHandler
-import com.andrejusti.example.kotlin.springboot.rest.dto.ItemValidationError
-import com.andrejusti.example.kotlin.springboot.rest.dto.Pagination
-import com.andrejusti.example.kotlin.springboot.rest.exception.ValidationException
+import com.andrejusti.example.kotlin.springboot.rest.global.dto.ItemValidationError
+import com.andrejusti.example.kotlin.springboot.rest.global.dto.Pagination
+import com.andrejusti.example.kotlin.springboot.rest.global.exception.ValidationException
 import java.net.URI
 import javax.annotation.PostConstruct
 

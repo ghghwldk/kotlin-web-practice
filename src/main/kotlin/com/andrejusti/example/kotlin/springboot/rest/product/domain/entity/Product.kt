@@ -1,5 +1,6 @@
-package com.andrejusti.example.kotlin.springboot.rest.entity
+package com.andrejusti.example.kotlin.springboot.rest.product.domain.entity
 
+import com.andrejusti.example.kotlin.springboot.rest.category.domain.entity.Category
 import javax.persistence.*
 
 

@@ -1,4 +1,4 @@
-package com.andrejusti.example.kotlin.springboot.rest.entity
+package com.andrejusti.example.kotlin.springboot.rest.category.domain.entity
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

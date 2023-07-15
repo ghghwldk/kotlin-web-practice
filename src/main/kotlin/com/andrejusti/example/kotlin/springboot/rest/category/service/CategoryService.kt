@@ -1,12 +1,14 @@
-package com.andrejusti.example.kotlin.springboot.rest.service
+package com.andrejusti.example.kotlin.springboot.rest.category.service
 
 import org.apache.commons.lang3.StringUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import com.andrejusti.example.kotlin.springboot.rest.entity.Category
-import com.andrejusti.example.kotlin.springboot.rest.repository.api.CategoryRepository
-import com.andrejusti.example.kotlin.springboot.rest.repository.api.ProductRepository
+import com.andrejusti.example.kotlin.springboot.rest.category.domain.entity.Category
+import com.andrejusti.example.kotlin.springboot.rest.category.repository.CategoryRepository
+import com.andrejusti.example.kotlin.springboot.rest.global.service.PaginationService
+import com.andrejusti.example.kotlin.springboot.rest.global.service.ValidateService
+import com.andrejusti.example.kotlin.springboot.rest.product.repository.ProductRepository
 
 @Service
 class CategoryService(

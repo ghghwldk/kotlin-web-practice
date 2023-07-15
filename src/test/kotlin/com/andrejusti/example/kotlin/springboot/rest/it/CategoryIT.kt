@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired
 import com.andrejusti.example.kotlin.springboot.rest.AbstractIT
 import com.andrejusti.example.kotlin.springboot.rest.clientapi.CategoryClientApi
 import com.andrejusti.example.kotlin.springboot.rest.clientapi.ProductClientApi
-import com.andrejusti.example.kotlin.springboot.rest.dto.Pagination
-import com.andrejusti.example.kotlin.springboot.rest.entity.Category
-import com.andrejusti.example.kotlin.springboot.rest.entity.Product
-import com.andrejusti.example.kotlin.springboot.rest.service.CategoryService
-import com.andrejusti.example.kotlin.springboot.rest.service.ValidateService
+import com.andrejusti.example.kotlin.springboot.rest.global.dto.Pagination
+import com.andrejusti.example.kotlin.springboot.rest.category.domain.entity.Category
+import com.andrejusti.example.kotlin.springboot.rest.product.domain.entity.Product
+import com.andrejusti.example.kotlin.springboot.rest.category.service.CategoryService
+import com.andrejusti.example.kotlin.springboot.rest.global.service.ValidateService
 
 class CategoryIT : AbstractIT() {
 

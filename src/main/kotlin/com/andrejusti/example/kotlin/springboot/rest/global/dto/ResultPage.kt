@@ -1,4 +1,4 @@
-package com.andrejusti.example.kotlin.springboot.rest.dto
+package com.andrejusti.example.kotlin.springboot.rest.global.dto
 
 data class ResultPage<T>(
         var totalRecords: Long? = null,

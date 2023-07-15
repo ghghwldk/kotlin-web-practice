@@ -1,8 +1,8 @@
-package com.andrejusti.example.kotlin.springboot.rest.repository.api
+package com.andrejusti.example.kotlin.springboot.rest.category.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
-import com.andrejusti.example.kotlin.springboot.rest.entity.Category
+import com.andrejusti.example.kotlin.springboot.rest.category.domain.entity.Category
 
 @Repository
 interface CategoryRepository : JpaRepository<Category, Long> {

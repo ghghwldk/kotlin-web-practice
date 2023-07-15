@@ -1,15 +1,14 @@
-package com.andrejusti.example.kotlin.springboot.rest.service
+package com.andrejusti.example.kotlin.springboot.rest.global.service
 
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.MessageSource
-import org.springframework.context.NoSuchMessageException
 import org.springframework.context.i18n.LocaleContextHolder
 import org.springframework.stereotype.Service
 import org.springframework.web.context.annotation.RequestScope
-import com.andrejusti.example.kotlin.springboot.rest.controller.config.ValidationExceptionAdviceConfig
-import com.andrejusti.example.kotlin.springboot.rest.dto.ItemValidationError
-import com.andrejusti.example.kotlin.springboot.rest.exception.ValidationException
+import com.andrejusti.example.kotlin.springboot.rest.config.ValidationExceptionAdviceConfig
+import com.andrejusti.example.kotlin.springboot.rest.global.dto.ItemValidationError
+import com.andrejusti.example.kotlin.springboot.rest.global.exception.ValidationException
 
 @RequestScope
 @Service

@@ -5,8 +5,8 @@ import org.junit.Assert
 import org.junit.runner.RunWith
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit4.SpringRunner
-import com.andrejusti.example.kotlin.springboot.rest.dto.Pagination
-import com.andrejusti.example.kotlin.springboot.rest.exception.ValidationException
+import com.andrejusti.example.kotlin.springboot.rest.global.dto.Pagination
+import com.andrejusti.example.kotlin.springboot.rest.global.exception.ValidationException
 import java.util.*
 
 @RunWith(SpringRunner::class)

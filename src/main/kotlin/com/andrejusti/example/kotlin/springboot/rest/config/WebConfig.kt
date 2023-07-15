@@ -1,4 +1,4 @@
-package com.andrejusti.example.kotlin.springboot.rest.controller.config
+package com.andrejusti.example.kotlin.springboot.rest.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
