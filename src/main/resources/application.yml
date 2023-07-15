@@ -27,5 +27,5 @@ logging:
         SQL: DEBUG
         type.descriptor.sql.BasicBinder: TRACE
     com:
-      andrejusti: INFO
-      andrejusti.example.kotlin.springboot.rest.exception.ValidationException: OFF
+      m: INFO
+      m.example.kotlin.springboot.rest.exception.ValidationException: OFF

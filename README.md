@@ -107,7 +107,7 @@ docker run -d -p 8080:8080 justiandre/example-kotlin-springboot-rest:master
  +                                                                                                           +
  +     App de exemplo: Kotlin + Spring Boot + rest                                                           +
  +     https://github.com/justiandre/example-kotlin-springboot-rest                                          +
- +     Por: André Justi <justi.andre@gmail.com> - http://andrejusti.com                                      +
+ +     Por: André Justi <justi.andre@gmail.com> - http://m.com                                      +
  +                                                                                                           +
  + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
  
@@ -126,10 +126,10 @@ $datetime  INFO --- [ost-startStop-1] com.zaxxer.hikari.HikariDataSource       :
 $datetime  INFO --- [ost-startStop-1] liquibase                                : Successfully acquired change log lock
 $datetime  INFO --- [ost-startStop-1] liquibase                                : Creating database history table with name: PUBLIC.DATABASECHANGELOG
 $datetime  INFO --- [ost-startStop-1] liquibase                                : Reading from PUBLIC.DATABASECHANGELOG
-$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::andrejusti: Table Category created
-$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::andrejusti: Table Product created
-$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::andrejusti: Table Product_Category created
-$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::andrejusti: ChangeSet classpath:/db/changelog/db.changelog-master.yaml::1::andrejusti ran successfully in 12ms
+$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::m: Table Category created
+$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::m: Table Product created
+$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::m: Table Product_Category created
+$datetime  INFO --- [ost-startStop-1] liquibase                                : classpath:/db/changelog/db.changelog-master.yaml: classpath:/db/changelog/db.changelog-master.yaml::1::m: ChangeSet classpath:/db/changelog/db.changelog-master.yaml::1::m ran successfully in 12ms
 $datetime  INFO --- [ost-startStop-1] liquibase                                : Successfully released change log lock
 $datetime  INFO --- [ost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
 $datetime  INFO --- [ost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [ name: default ]

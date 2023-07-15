@@ -12,6 +12,6 @@
  +                                                                                                           +
  +     App de exemplo: Kotlin + Spring Boot + rest                                                           +
  +     https://github.com/justiandre/example-kotlin-springboot-rest                                          +
- +     Por: André Justi <justi.andre@gmail.com> - http://andrejusti.com                                      +
+ +     Por: André Justi <justi.andre@gmail.com> - http://m.com                                      +
  +                                                                                                           +
  + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
