@@ -32,6 +32,8 @@ class TestController(
 
     @GetMapping(URL1)
     fun test(): String{
+        val testMap: HashMap<String, String> = HashMap()
+        testMap.put("a", "a")
         logger.info("test called")
         return testService.test()
     }
