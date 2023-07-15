@@ -20,10 +20,14 @@ class ProductEndpoint(
     }
 
     @GetMapping(URI_PATH_PRODUCT)
-    fun findAll(@RequestParam(required = false) page: Int?, @RequestParam(required = false) maxRecords: Int?, @RequestParam(required = false) name: String?) = productService.findAll(page, maxRecords, name)
+    fun findAll(@RequestParam(required = false) page: Int?,
+                @RequestParam(required = false) maxRecords: Int?,
+                @RequestParam(required = false) name: String?)
+        = productService.findAll(page, maxRecords, name)
 
     @GetMapping(URI_PATH_PRODUCT_ID)
-    fun findById(@PathVariable(PARAM_PATH_ID) id: Long) = productService.findById(id)
+    fun findById(@PathVariable(PARAM_PATH_ID) id: Long)
+        = productService.findById(id)
 
     @PostMapping(URI_PATH_PRODUCT)
     fun save(@RequestBody product: Product, request: HttpServletRequest): ResponseEntity<Any> {
@@ -33,8 +37,9 @@ class ProductEndpoint(
 
     @PutMapping(URI_PATH_PRODUCT_ID)
     fun edit(@PathVariable(PARAM_PATH_ID) id: Long, @RequestBody product: Product) =
-            productService.save(product.apply { this.id = id })
+        productService.save(product.apply { this.id = id })
 
     @DeleteMapping(URI_PATH_PRODUCT_ID)
-    fun deleteById(@PathVariable(PARAM_PATH_ID) id: Long) = productService.delete(id)
+    fun deleteById(@PathVariable(PARAM_PATH_ID) id: Long)
+        = productService.delete(id)
 }

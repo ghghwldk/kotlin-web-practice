@@ -35,28 +35,28 @@ class ValidateService {
         itemValidationError.apply { itemValidationErrors.add(this) }
     }
 
-    fun addIfItemConditionIsTrue(condition: () -> Boolean, itemValidationError: ItemValidationError) {
+    fun addItem(condition: () -> Boolean, itemValidationError: ItemValidationError) {
         if (condition()) {
             addItemValidation(itemValidationError)
         }
     }
 
-    fun addIfItemConditionIsTrue(condition: () -> Boolean, errorLocation: String, errorType: String, context: List<Any>? = null) {
-        addIfItemConditionIsTrue(condition, createItemValidationError(errorLocation, errorType, context))
+    fun addItem(condition: () -> Boolean, errorLocation: String, errorType: String, context: List<Any>? = null) {
+        addItem(condition, createItemValidationError(errorLocation, errorType, context))
     }
 
-    fun addIfItemConditionIsTrue(condition: Boolean, itemValidationError: ItemValidationError) {
-        addIfItemConditionIsTrue({ condition }, itemValidationError)
+    fun addItem(condition: Boolean, itemValidationError: ItemValidationError) {
+        addItem({ condition }, itemValidationError)
     }
 
-    fun addIfItemConditionIsTrue(condition: Boolean, errorLocation: String, errorType: String, context: List<Any>? = null) {
-        addIfItemConditionIsTrue(condition, createItemValidationError(errorLocation, errorType, context))
+    fun addItem(condition: Boolean, errorLocation: String, errorType: String, context: List<Any>? = null) {
+        addItem(condition, createItemValidationError(errorLocation, errorType, context))
     }
 
 
-    fun addIfItemConditionIsTrueAndNotHasError(condition: () -> Boolean, errorLocation: String, errorType: String, context: List<Any>? = null) {
+    fun addWithNoneError(condition: () -> Boolean, errorLocation: String, errorType: String, context: List<Any>? = null) {
         if (!hasValidationError()) {
-            addIfItemConditionIsTrue(condition, errorLocation, errorType, context)
+            addItem(condition, errorLocation, errorType, context)
         }
     }
 

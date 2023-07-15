@@ -20,10 +20,13 @@ class CategoryEndpoint(
     }
 
     @GetMapping(URI_PATH_CATEGORY)
-    fun findAll(@RequestParam(required = false) page: Int?, @RequestParam(required = false) maxRecords: Int?) = categoryService.findAll(page, maxRecords)
+    fun findAll(@RequestParam(required = false) page: Int?,
+                @RequestParam(required = false) maxRecords: Int?)
+        = categoryService.findAll(page, maxRecords)
 
     @GetMapping(URI_PATH_CATEGORY_ID)
-    fun findById(@PathVariable(PARAM_PATH_ID) id: Long) = categoryService.findById(id)
+    fun findById(@PathVariable(PARAM_PATH_ID) id: Long)
+        = categoryService.findById(id)
 
     @PostMapping(URI_PATH_CATEGORY)
     fun save(@RequestBody category: Category, request: HttpServletRequest): ResponseEntity<Any> {
@@ -36,5 +39,6 @@ class CategoryEndpoint(
             categoryService.save(category.apply { this.id = id })
 
     @DeleteMapping(URI_PATH_CATEGORY_ID)
-    fun deleteById(@PathVariable(PARAM_PATH_ID) id: Long) = categoryService.delete(id)
+    fun deleteById(@PathVariable(PARAM_PATH_ID) id: Long)
+        = categoryService.delete(id)
 }

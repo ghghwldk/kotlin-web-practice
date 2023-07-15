@@ -23,7 +23,9 @@ class CategoryService(
         const val ITEM_VALIDATION_LOCATION_CATEGORY_PRODUCT = "category.product"
     }
 
-    fun findById(id: Long) = categoryRepository.findById(id).orElse(null)
+    fun findById(id: Long)
+        = categoryRepository.findById(id)
+            .orElse(null)
 
     fun findAll(page: Int?, maxRecords: Int?) =
             paginationService.parseResult(page, maxRecords, categoryRepository::findAll)
@@ -44,13 +46,23 @@ class CategoryService(
     }
 
     private fun validateDelete(idCategory: Long) = validationService.apply {
-        addIfItemConditionIsTrue(productRepository.existsByCategoriesId(idCategory), ITEM_VALIDATION_LOCATION_CATEGORY_PRODUCT, ValidateService.ITEM_VALIDATION_ERROR_TYPE_RELATIONSHIP)
+        addItem(productRepository.existsByCategoriesId(idCategory),
+                ITEM_VALIDATION_LOCATION_CATEGORY_PRODUCT,
+                ValidateService.ITEM_VALIDATION_ERROR_TYPE_RELATIONSHIP)
     }.validate()
 
     private fun validateSave(category: Category) = validationService.apply {
-        addIfItemConditionIsTrue(StringUtils.isBlank(category.name), ITEM_VALIDATION_LOCATION_CATEGORY_NAME, ValidateService.ITEM_VALIDATION_ERROR_TYPE_REQUIRED)
-        addIfItemConditionIsTrueAndNotHasError({ StringUtils.length(category.name) > CATEGORY_NAME_MAX_SIZE }, ITEM_VALIDATION_LOCATION_CATEGORY_NAME, ValidateService.ITEM_VALIDATION_ERROR_TYPE_MAX_SIZE, listOf(CATEGORY_NAME_MAX_SIZE))
-        addIfItemConditionIsTrueAndNotHasError({ isDuplicateCategory(category) }, ITEM_VALIDATION_LOCATION_CATEGORY_NAME, ValidateService.ITEM_VALIDATION_ERROR_TYPE_DUPLICATE)
+        addItem(
+                StringUtils.isBlank(category.name),
+                ITEM_VALIDATION_LOCATION_CATEGORY_NAME,
+                ValidateService.ITEM_VALIDATION_ERROR_TYPE_REQUIRED)
+        addItem({ StringUtils.length(category.name) > CATEGORY_NAME_MAX_SIZE },
+                ITEM_VALIDATION_LOCATION_CATEGORY_NAME,
+                ValidateService.ITEM_VALIDATION_ERROR_TYPE_MAX_SIZE,
+                listOf(CATEGORY_NAME_MAX_SIZE))
+        addItem({ isDuplicateCategory(category) },
+                ITEM_VALIDATION_LOCATION_CATEGORY_NAME,
+                ValidateService.ITEM_VALIDATION_ERROR_TYPE_DUPLICATE)
     }.validate()
 
     private fun isDuplicateCategory(category: Category) =
