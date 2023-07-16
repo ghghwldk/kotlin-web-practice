@@ -55,10 +55,10 @@ class CodingTestController(
         val result: ProblemOutput? = input?.let { solution?.solution(it) }
 
         val totalLogic = TotalLogic()
-        if (solution != null) {
-            if (input != null) {
-                if (result != null) {
-                    totalLogic.set(input, solution, result)
+        solution?.let { s ->
+            input?.let { i ->
+                result?.let { r ->
+                    totalLogic.set(i, s, r)
                 }
             }
         }

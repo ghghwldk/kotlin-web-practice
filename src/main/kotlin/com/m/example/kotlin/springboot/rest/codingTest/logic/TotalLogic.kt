@@ -6,17 +6,17 @@ import com.m.example.kotlin.springboot.rest.codingTest.output.요격시스템Res
 import com.m.example.kotlin.springboot.rest.codingTest.solution.CodingTestSolution
 
 class TotalLogic {
-    var problemInput: ProblemInput? = null
-    var solution: CodingTestSolution? = null
-    var problemOutput:ProblemOutput? = null
+    private lateinit var problemInput: ProblemInput
+    private lateinit var solution: CodingTestSolution
+    private lateinit var problemOutput: ProblemOutput
 
-    fun set(problemInput: ProblemInput, solution: CodingTestSolution, result: ProblemOutput){
+    fun set(problemInput: ProblemInput, solution: CodingTestSolution, result: ProblemOutput) {
         this.problemInput = problemInput
         this.solution = solution
         this.problemOutput = result
     }
 
-    fun execute():Int{
+    fun execute(): Int {
         if (problemOutput is 요격시스템Result) {
             val count = (problemOutput as 요격시스템Result).count
             return count
@@ -26,28 +26,3 @@ class TotalLogic {
         }
     }
 }
-
-/*
-val targets = arrayOf(
-                intArrayOf(2, 3),
-                intArrayOf(4, 5),
-                intArrayOf(6, 7),
-                intArrayOf(8, 9),
-                intArrayOf(10, 11),
-                intArrayOf(12, 13),
-                intArrayOf(14, 15),
-                intArrayOf(16, 17)
-        )
-
-        val input: ProblemInput? = Targets(targets)
-        val solution: CodingTestSolution? = 요격시스템()
-        val result: ProblemOutput? = input?.let { solution?.solution(it) }
-
-
-        if (result is 요격시스템Result) {
-            val count = result.count
-            return count
-        } else {
-            println("Invalid result type.")
-            return -1
-*/
