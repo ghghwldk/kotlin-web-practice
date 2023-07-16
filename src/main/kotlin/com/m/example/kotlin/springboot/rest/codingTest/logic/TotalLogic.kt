@@ -5,12 +5,12 @@ import com.m.example.kotlin.springboot.rest.codingTest.output.ProblemOutput
 import com.m.example.kotlin.springboot.rest.codingTest.output.요격시스템Result
 import com.m.example.kotlin.springboot.rest.codingTest.solution.CodingTestSolution
 
-class TotalLogic {
-    private lateinit var problemInput: ProblemInput
-    private lateinit var solution: CodingTestSolution
-    private lateinit var problemOutput: ProblemOutput
+class TotalLogic<T> {
+    private var problemInput: ProblemInput? = null
+    private var solution: CodingTestSolution? = null
+    private var problemOutput: T? = null
 
-    fun set(problemInput: ProblemInput, solution: CodingTestSolution, result: ProblemOutput) {
+    fun set(problemInput: ProblemInput, solution: CodingTestSolution, result: T) {
         this.problemInput = problemInput
         this.solution = solution
         this.problemOutput = result
