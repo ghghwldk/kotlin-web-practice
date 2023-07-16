@@ -15,6 +15,11 @@ spring:
     fallback-to-system-locale: true
     use-code-as-default-message: true
     basename: messages, validation-messages
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 
 # Configuração de log.
 logging:

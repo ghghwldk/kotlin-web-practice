@@ -1,22 +1,16 @@
 package com.m.example.kotlin.springboot.rest.test.controller
 
-import com.m.example.kotlin.springboot.rest.codingTest.CodingTestSolution
-import com.m.example.kotlin.springboot.rest.codingTest.ProblemInput
-import com.m.example.kotlin.springboot.rest.codingTest.impl.Targets
-import com.m.example.kotlin.springboot.rest.codingTest.요격시스템
-import com.m.example.kotlin.springboot.rest.global.exception.ValidationException
+import com.m.example.kotlin.springboot.rest.codingTest.solution.CodingTestSolution
+import com.m.example.kotlin.springboot.rest.codingTest.input.ProblemInput
+import com.m.example.kotlin.springboot.rest.codingTest.input.impl.Targets
+import com.m.example.kotlin.springboot.rest.codingTest.solution.extended.요격시스템
 import com.m.example.kotlin.springboot.rest.test.service.TestService
 import com.m.example.kotlin.springboot.rest.test.service.TestService2
-import com.m.example.kotlin.springboot.rest.test.service.impl.TestServiceImpl
 import lombok.RequiredArgsConstructor
-import lombok.extern.slf4j.Slf4j
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import javax.annotation.PostConstruct
 
 @RestController
 @RequiredArgsConstructor
@@ -45,26 +39,5 @@ class TestController(
     fun test2(): String{
         logger.info("test2 called")
         return testService2.test()
-    }
-
-    @GetMapping
-    fun test3(): Int{
-        val targets = arrayOf(
-                intArrayOf(2, 3),
-                intArrayOf(4, 5),
-                intArrayOf(6, 7),
-                intArrayOf(8, 9),
-                intArrayOf(10, 11),
-                intArrayOf(12, 13),
-                intArrayOf(14, 15),
-                intArrayOf(16, 17)
-        )
-
-        val input: ProblemInput = Targets(targets)
-        val solution: CodingTestSolution = 요격시스템()
-        val result = solution.solution(input)
-        println("Maximum number of non-overlapping targets: $result")
-
-        return result
     }
 }
