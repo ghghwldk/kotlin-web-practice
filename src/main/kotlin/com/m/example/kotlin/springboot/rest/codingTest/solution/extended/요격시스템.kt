@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class 요격시스템 : CodingTestSolution() {
-    override fun solution(input: ProblemInput): ProblemOutput {
+    override fun execute(input: ProblemInput): ProblemOutput {
         var answer: Int = 0
         val targets = (input as Targets).targets
         targets.sortBy { it[1] }

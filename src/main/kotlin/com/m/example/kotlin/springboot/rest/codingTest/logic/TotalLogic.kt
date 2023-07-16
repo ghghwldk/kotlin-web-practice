@@ -10,16 +10,15 @@ class TotalLogic<T> {
     private var solution: CodingTestSolution? = null
     private var problemOutput: T? = null
 
-    fun set(problemInput: ProblemInput, solution: CodingTestSolution, result: T) {
+    fun set(problemInput: ProblemInput, solution: CodingTestSolution) {
         this.problemInput = problemInput
         this.solution = solution
-        this.problemOutput = result
+//        this.problemOutput = result
     }
 
-    fun execute(): Int {
-        val result = problemOutput as? 요격시스템Result
-                ?: throw IllegalStateException("Invalid result type.")
-
-        return result.count
+    fun execute(): ProblemOutput? {
+//        val result = problemOutput as? 요격시스템Result
+//                ?: throw IllegalStateException("Invalid result type.")
+        return problemInput?.let { solution?.execute(it) }
     }
 }

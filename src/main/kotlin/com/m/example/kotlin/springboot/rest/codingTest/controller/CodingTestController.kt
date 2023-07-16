@@ -37,31 +37,12 @@ class CodingTestController(
                 intArrayOf(14, 15),
                 intArrayOf(16, 17)
         )
-//
-//        val input: ProblemInput? = Targets(targets)
-//        val solution: CodingTestSolution? = 요격시스템()
-//        val result: ProblemOutput? = input?.let { solution?.solution(it) }
-//
-//
-//        if (result is 요격시스템Result) {
-//            val count = result.count
-//            return count
-//        } else {
-//            println("Invalid result type.")
-//            return -1
-//        }
-        val input: ProblemInput? = Targets(targets)
-        val solution: CodingTestSolution? = 요격시스템()
-        val result: ProblemOutput? = input?.let { solution?.solution(it) }
+        val input = Targets(targets)
+        val solution = 요격시스템()
 
-        val totalLogic = TotalLogic()
-        solution?.let { s ->
-            input?.let { i ->
-                result?.let { r ->
-                    totalLogic.set(i, s, r)
-                }
-            }
-        }
-        return totalLogic.execute()
+        val totalLogic = TotalLogic<요격시스템Result>()
+        totalLogic.set(input, solution)
+        val executionResult = totalLogic.execute() as? 요격시스템Result
+        return executionResult?.count ?: -1
     }
 }
