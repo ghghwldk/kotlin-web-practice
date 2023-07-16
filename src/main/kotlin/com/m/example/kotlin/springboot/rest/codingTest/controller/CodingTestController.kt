@@ -1,10 +1,8 @@
 package com.m.example.kotlin.springboot.rest.codingTest.controller
 
 import com.m.example.kotlin.springboot.rest.codingTest.solution.CodingTestSolution
-import com.m.example.kotlin.springboot.rest.codingTest.input.ProblemInput
 import com.m.example.kotlin.springboot.rest.codingTest.input.impl.Targets
-import com.m.example.kotlin.springboot.rest.codingTest.logic.TotalLogic
-import com.m.example.kotlin.springboot.rest.codingTest.output.ProblemOutput
+import com.m.example.kotlin.springboot.rest.codingTest.logic.TotalLogicTemplate
 import com.m.example.kotlin.springboot.rest.codingTest.output.요격시스템Result
 import com.m.example.kotlin.springboot.rest.codingTest.solution.extended.요격시스템
 import lombok.RequiredArgsConstructor
@@ -40,9 +38,9 @@ class CodingTestController(
         val input = Targets(targets)
         val solution = 요격시스템()
 
-        val totalLogic = TotalLogic<요격시스템Result>()
+        val totalLogic = TotalLogicTemplate()
         totalLogic.set(input, solution)
-        val executionResult = totalLogic.execute() as? 요격시스템Result
+        val executionResult = totalLogic.executeAndPrint() as? 요격시스템Result
         return executionResult?.count ?: -1
     }
 }
