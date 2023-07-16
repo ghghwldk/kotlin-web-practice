@@ -3,11 +3,10 @@ package com.m.example.kotlin.springboot.rest.codingTest.controller
 import com.m.example.kotlin.springboot.rest.codingTest.solution.CodingTestSolution
 import com.m.example.kotlin.springboot.rest.codingTest.input.ProblemInput
 import com.m.example.kotlin.springboot.rest.codingTest.input.impl.Targets
+import com.m.example.kotlin.springboot.rest.codingTest.logic.TotalLogic
 import com.m.example.kotlin.springboot.rest.codingTest.output.ProblemOutput
-import com.m.example.kotlin.springboot.rest.codingTest.output.SolutionResult
+import com.m.example.kotlin.springboot.rest.codingTest.output.요격시스템Result
 import com.m.example.kotlin.springboot.rest.codingTest.solution.extended.요격시스템
-import com.m.example.kotlin.springboot.rest.test.service.TestService
-import com.m.example.kotlin.springboot.rest.test.service.TestService2
 import lombok.RequiredArgsConstructor
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -38,18 +37,31 @@ class CodingTestController(
                 intArrayOf(14, 15),
                 intArrayOf(16, 17)
         )
-
+//
+//        val input: ProblemInput? = Targets(targets)
+//        val solution: CodingTestSolution? = 요격시스템()
+//        val result: ProblemOutput? = input?.let { solution?.solution(it) }
+//
+//
+//        if (result is 요격시스템Result) {
+//            val count = result.count
+//            return count
+//        } else {
+//            println("Invalid result type.")
+//            return -1
+//        }
         val input: ProblemInput? = Targets(targets)
         val solution: CodingTestSolution? = 요격시스템()
         val result: ProblemOutput? = input?.let { solution?.solution(it) }
 
-        if (result is SolutionResult) {
-            val count = result.count
-            println("Maximum number of non-overlapping targets: $count")
-            return count
-        } else {
-            println("Invalid result type.")
-            return -1
+        val totalLogic = TotalLogic()
+        if (solution != null) {
+            if (input != null) {
+                if (result != null) {
+                    totalLogic.set(input, solution, result)
+                }
+            }
         }
+        return totalLogic.execute()
     }
 }

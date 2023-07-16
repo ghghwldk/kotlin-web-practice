@@ -3,7 +3,7 @@ package com.m.example.kotlin.springboot.rest.codingTest.solution.extended
 import com.m.example.kotlin.springboot.rest.codingTest.input.ProblemInput
 import com.m.example.kotlin.springboot.rest.codingTest.input.impl.Targets
 import com.m.example.kotlin.springboot.rest.codingTest.output.ProblemOutput
-import com.m.example.kotlin.springboot.rest.codingTest.output.SolutionResult
+import com.m.example.kotlin.springboot.rest.codingTest.output.요격시스템Result
 import com.m.example.kotlin.springboot.rest.codingTest.solution.CodingTestSolution
 import org.springframework.stereotype.Component
 
@@ -23,7 +23,7 @@ class 요격시스템 : CodingTestSolution() {
             }
         }
 
-        return SolutionResult(answer)
+        return 요격시스템Result(answer)
     }
 }
 
